@@ -21,7 +21,7 @@ def main():
         if curr %2 == 0:
             sum += curr
 
-    print sum
+    print (sum)
 
 if __name__ == '__main__':
     main()

@@ -24,7 +24,7 @@ def main():
         elif is_prime(i) and num%i == 0:
             lst.append(i)
 
-    print lst
+    print (lst)
 
 if __name__ == '__main__':
     main()

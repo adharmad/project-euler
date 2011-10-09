@@ -34,7 +34,7 @@ def main():
             if is_palindrome(str(prod)) and prod > largest:
                 largest = prod
 
-    print largest
+    print (largest)
 
 
 if __name__ == '__main__':
