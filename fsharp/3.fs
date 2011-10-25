@@ -7,8 +7,11 @@
 
 open System
 
+let isPrime n =
+    let bound = int (System.Math.Sqrt(float n))
+    seq {2 .. bound} |> Seq.exists (fun x -> n % x = 0) |> not
 
 [<EntryPoint>]
 let main (args : string[]) = 
-
+    isPrime 1
     0
