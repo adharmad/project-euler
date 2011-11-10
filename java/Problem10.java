@@ -1,18 +1,13 @@
 
-public class Problem7 {
+public class Problem10 {
 	public static void main(String[] args) {
-		int i = 0;
-		int num = 0;
+		long sum = 0;
 		
-		while (true) {
-			num++;
-			if (is_prime(num)) i++;
-			
-			
-			if (i == 10001) break;
+		for (int i=1 ; i<2000000 ; i++) {
+			sum += (is_prime(i)? i : 0);
 		}
 		
-		System.out.println("10001th prime = " + num);
+		System.out.println(sum);
 	}
 	
 	public static boolean is_prime(int num) {
@@ -25,5 +20,5 @@ public class Problem7 {
 		}
 			
 		return true;
-	}	
+	}		
 }
