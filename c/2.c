@@ -1,3 +1,4 @@
+/* http://projecteuler.net/problem=2 */
 #include <stdio.h>
 
 long fib(long i)

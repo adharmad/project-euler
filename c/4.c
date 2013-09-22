@@ -1,3 +1,4 @@
+/* http://projecteuler.net/problem=4 */
 #include <string.h>
 #include <stdio.h>
 

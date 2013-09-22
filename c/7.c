@@ -1,3 +1,4 @@
+/* http://projecteuler.net/problem=7 */
 #include <stdio.h>
 #include <math.h>
 

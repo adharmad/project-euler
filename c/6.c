@@ -1,3 +1,4 @@
+/* http://projecteuler.net/problem=6 */
 #include <stdio.h>
 
 int main(int argc, char* argv[])
