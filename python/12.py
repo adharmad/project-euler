@@ -23,8 +23,29 @@
 
 import string, sys
 
+def find_divisors(num):
+    count = 0
+    
+    for i in range(1, num+1):
+        if num % i == 0:
+            count += 1
+    
+    return count
+
 def main():
-    pass
+    triangle_num = 0
+    start_idx = 1
+    
+    while True:
+        triangle_num += start_idx
+        start_idx +=1
+        
+        num_divisors = find_divisors(triangle_num)
+        #print("{0} has {1} divisors".format(triangle_num, num_divisors))
+        
+        if num_divisors > 500:
+            print("{0} has {1} divisors".format(triangle_num, num_divisors))
+            break
 
 if __name__ == '__main__':
     main()
