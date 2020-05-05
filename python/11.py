@@ -97,7 +97,7 @@ def main():
                 max_start_elem = [i, j]   
 
     # diagonal direction - left to right going up
-    for i in range(GRID_LEN-1, 2, -1):
+    for i in range(GRID_LEN-1, 3, -1):
         # walk through all the elements in the diagonal taking product of 4 at a time
         for j in range(0, GRID_LEN-3):
             prod = GRID[i][j] * GRID[i-1][j+1] * GRID[i-2][j+2] * GRID[i-3][j+3]
@@ -108,9 +108,9 @@ def main():
                 max_start_elem = [i, j]   
 
     # diagonal direction - right to left going up
-    for i in range(GRID_LEN-1, 2, -1):
+    for i in range(GRID_LEN-1, 3, -1):
         # walk through all the elements in the diagonal taking product of 4 at a time
-        for j in range(GRID_LEN-1, 2, -1):
+        for j in range(GRID_LEN-1, 3, -1):
             prod = GRID[i][j] * GRID[i-1][j-1] * GRID[i-2][j-2] * GRID[i-3][j-3]
             if prod > max_product:
                 max_product = prod
@@ -119,9 +119,9 @@ def main():
                 max_start_elem = [i, j]
                 
     # diagonal direction - right to left going down
-    for i in range(0, GRID_LEN-1):
+    for i in range(0, GRID_LEN-3):
         # walk through all the elements in the diagonal taking product of 4 at a time
-        for j in range(GRID_LEN-1, 2, -1):
+        for j in range(GRID_LEN-1, 3, -1):
             prod = GRID[i][j] * GRID[i+1][j-1] * GRID[i+2][j-2] * GRID[i+3][j-3]
             if prod > max_product:
                 max_product = prod
