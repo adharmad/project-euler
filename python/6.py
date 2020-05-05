@@ -14,7 +14,6 @@
 
 import string, sys
 import functools
-from math import sqrt
 
 def main():
     sum_of_squares = 0

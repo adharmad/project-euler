@@ -6,24 +6,8 @@
 # https://projecteuler.net/problem=4
 
 import string, sys
-from math import sqrt
 
-def is_palindrome(s):
-    """
-    Checks if the given string is a palindrome and returns true
-    """
-    i = 0
-    j = len(s) - 1
-
-    while i < j:
-        if s[i] == s[j]:
-            i += 1
-            j -= 1
-            continue
-        else:
-            return False
-
-    return True
+import commonutils
 
 def main():
     largest = 0
@@ -32,7 +16,7 @@ def main():
         for j in range(100, 999):
             prod = i * j
 
-            if is_palindrome(str(prod)) and prod > largest:
+            if commonutils.isPalindrome(str(prod)) and prod > largest:
                 largest = prod
 
     print (largest)

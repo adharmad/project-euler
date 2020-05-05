@@ -85,7 +85,7 @@ def main():
                 max_direction = 'vertical'
                 max_start_elem = [i, j]   
 
-    # diagonal direction - left to right
+    # diagonal direction - left to right going down
     for i in range(0, GRID_LEN-3):
         # walk through all the elements in the diagonal taking product of 4 at a time
         for j in range(0, GRID_LEN-3):
@@ -93,10 +93,21 @@ def main():
             if prod > max_product:
                 max_product = prod
                 max_tuple = [GRID[i][j], GRID[i+1][j+1], GRID[i+2][j+2], GRID[i+3][j+3]]
-                max_direction = 'diagonal-lr'
+                max_direction = 'diagonal-lrd'
                 max_start_elem = [i, j]   
 
-    # diagonal direction - right to left
+    # diagonal direction - left to right going up
+    for i in range(GRID_LEN-1, 2, -1):
+        # walk through all the elements in the diagonal taking product of 4 at a time
+        for j in range(0, GRID_LEN-3):
+            prod = GRID[i][j] * GRID[i-1][j+1] * GRID[i-2][j+2] * GRID[i-3][j+3]
+            if prod > max_product:
+                max_product = prod
+                max_tuple = [GRID[i][j], GRID[i+1][j+1], GRID[i+2][j+2], GRID[i+3][j+3]]
+                max_direction = 'diagonal-lru'
+                max_start_elem = [i, j]   
+
+    # diagonal direction - right to left going up
     for i in range(GRID_LEN-1, 2, -1):
         # walk through all the elements in the diagonal taking product of 4 at a time
         for j in range(GRID_LEN-1, 2, -1):
@@ -104,7 +115,18 @@ def main():
             if prod > max_product:
                 max_product = prod
                 max_tuple = [GRID[i][j], GRID[i-1][j-1], GRID[i-2][j-2], GRID[i-3][j-3]]
-                max_direction = 'diagonal-rl'
+                max_direction = 'diagonal-rlu'
+                max_start_elem = [i, j]
+                
+    # diagonal direction - right to left going down
+    for i in range(0, GRID_LEN-1):
+        # walk through all the elements in the diagonal taking product of 4 at a time
+        for j in range(GRID_LEN-1, 2, -1):
+            prod = GRID[i][j] * GRID[i+1][j-1] * GRID[i+2][j-2] * GRID[i+3][j-3]
+            if prod > max_product:
+                max_product = prod
+                max_tuple = [GRID[i][j], GRID[i-1][j-1], GRID[i-2][j-2], GRID[i-3][j-3]]
+                max_direction = 'diagonal-rld'
                 max_start_elem = [i, j]
                 
     print("max_product = {0}".format(max_product))

@@ -9,23 +9,17 @@
 # https://projecteuler.net/problem=9
 
 import string, sys
-from math import sqrt
-
-def isPythagoreanTriplet(a, b, c):
-    x = [a, b, c]
-    x.sort()
-
-    if x[0]*x[0] + x[1]*x[1] == x[2]*x[2]:
-        return True
-
-    return False
+import commonutils
 
 def main():
     for i in range(1, 998):
-        for j in range(i+1, 1000-i-1):
-            if isPythagoreanTriplet(i, j, 1000-i-j):
-                print (i, j, 1000-i-j)
-                print (i*j*(1000-i-j))
+        for j in range(i+1, 999):
+            k = 1000 - i - j
+            if k < 0:
+                continue
+            if commonutils.isPythagoreanTriplet(i, j, k):
+                print (i, j, k)
+                print (i*j*k)
 
 if __name__ == '__main__':
     main()
