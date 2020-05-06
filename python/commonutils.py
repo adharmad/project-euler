@@ -118,3 +118,16 @@ def isPythagoreanTriplet(a, b, c):
         return True
 
     return False
+
+def getAllDivisors(num):
+    """
+    Returns a list having all the divisors of a number, including 1
+    """
+    div = []
+    
+    for i in range(1, int(num/2)):
+        if num % i == 0:
+            div.append(i)
+    
+    return div
+

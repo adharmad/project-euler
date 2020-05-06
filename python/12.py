@@ -22,29 +22,22 @@
 # https://projecteuler.net/problem=12
 
 import string, sys
-
-def find_divisors(num):
-    count = 0
-    
-    for i in range(1, num+1):
-        if num % i == 0:
-            count += 1
-    
-    return count
+import commonutils
 
 def main():
-    triangle_num = 0
-    start_idx = 1
+    triangleNum = 0
+    startIdx = 1
     
     while True:
-        triangle_num += start_idx
-        start_idx +=1
+        triangleNum += startIdx
+        startIdx +=1
+
+        divisors = commonutils.getAllDivisors(triangleNum)
+        numDivisors = len(divisors)
+        print("{0} has {1} divisors".format(triangleNum, numDivisors))
         
-        num_divisors = find_divisors(triangle_num)
-        #print("{0} has {1} divisors".format(triangle_num, num_divisors))
-        
-        if num_divisors > 500:
-            print("{0} has {1} divisors".format(triangle_num, num_divisors))
+        if numDivisors > 500:
+            print("{0} has {1} divisors".format(triangleNum, numDivisors))
             break
 
 if __name__ == '__main__':
