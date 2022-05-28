@@ -1,9 +1,9 @@
-# 2520 is the smallest number that can be divided by each of the numbers 
+# 2520 is the smallest number that can be divided by each of the numbers
 # from 1 to 10 without any remainder.
-# 
-# What is the smallest positive number that is evenly divisible by all of 
+#
+# What is the smallest positive number that is evenly divisible by all of
 # the numbers from 1 to 20?
-# 
+#
 # https://projecteuler.net/problem=5
 
 import string, sys
@@ -21,8 +21,10 @@ def main():
     # Get the factors of all the numbers. We can skip 1
     for i in range(2, 21):
         fact = commonutils.getAllFactors(i)
-        print ("Prime factors of ", i, " are ", fact)
+        #print ("Prime factors of ", i, " are ", fact)
         factors[i] = fact
+
+    #print(factors)
 
     # Build a map of all the factors and their cardinality
     for facts in factors.values():
@@ -39,6 +41,7 @@ def main():
     for k in maxDict.keys():
         lcm *= math.pow(k, maxDict[k])
 
+    lcm = int(lcm)
     print(lcm)
 
 if __name__ == '__main__':
