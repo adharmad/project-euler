@@ -1,4 +1,4 @@
-# The four adjacent digits in the 1000-digit number that have the greatest 
+# The four adjacent digits in the 1000-digit number that have the greatest
 # product are 9 × 9 × 8 × 9 = 5832.
 #
 #           73167176531330624919225119674426574742355349194934
@@ -22,7 +22,7 @@
 #           05886116467109405077541002256983155200055935729725
 #           71636269561882670428252483600823257530420752963450
 #
-# Find the thirteen adjacent digits in the 1000-digit number that have the 
+# Find the thirteen adjacent digits in the 1000-digit number that have the
 # greatest product. What is the value of this product?
 #
 # https://projecteuler.net/problem=8
@@ -51,16 +51,16 @@ NUM = """73167176531330624919225119674426574742355349194934\
 71636269561882670428252483600823257530420752963450"""
 
 def main():
-    prod = 0
+    maxProd = 0
     for i in range(len(NUM)-13):
         tmpProd = 1
         for j in range(13):
             tmpProd *= int(NUM[i+j])
 
-        if tmpProd > prod:
-            prod = tmpProd
+        if tmpProd > maxProd:
+            maxProd = tmpProd
 
-    print("Max product of 13 adjacent digits = ", prod)
+    print(f"Max product of 13 adjacent digits = {maxProd}")
 
 if __name__ == '__main__':
     main()
