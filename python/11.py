@@ -1,6 +1,6 @@
-# In the 20×20 grid below, four numbers along a diagonal line have been 
+# In the 20×20 grid below, four numbers along a diagonal line have been
 # marked in red.
-# 
+#
 # 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 # 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 # 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -21,10 +21,10 @@
 # 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16
 # 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 # 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
-# 
+#
 # The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
-# What is the greatest product of four adjacent numbers in the same 
+# What is the greatest product of four adjacent numbers in the same
 # direction (up, down, left, right, or diagonally) in the 20×20 grid?
 #
 # https://projecteuler.net/problem=11
@@ -73,7 +73,7 @@ def main():
                 max_tuple = [GRID[i][j], GRID[i][j+1], GRID[i][j+2], GRID[i][j+3]]
                 max_direction = 'horizontal'
                 max_start_elem = [i, j]
-        
+
     # vertical direction
     for i in range(0, GRID_LEN-3):
         # walk through all the elements in the column taking product of 4 at a time
@@ -83,7 +83,7 @@ def main():
                 max_product = prod
                 max_tuple = [GRID[i][j], GRID[i+1][j], GRID[i+2][j], GRID[i+3][j]]
                 max_direction = 'vertical'
-                max_start_elem = [i, j]   
+                max_start_elem = [i, j]
 
     # diagonal direction - left to right going down
     for i in range(0, GRID_LEN-3):
@@ -94,7 +94,7 @@ def main():
                 max_product = prod
                 max_tuple = [GRID[i][j], GRID[i+1][j+1], GRID[i+2][j+2], GRID[i+3][j+3]]
                 max_direction = 'diagonal-lrd'
-                max_start_elem = [i, j]   
+                max_start_elem = [i, j]
 
     # diagonal direction - left to right going up
     for i in range(GRID_LEN-1, 3, -1):
@@ -105,7 +105,7 @@ def main():
                 max_product = prod
                 max_tuple = [GRID[i][j], GRID[i+1][j+1], GRID[i+2][j+2], GRID[i+3][j+3]]
                 max_direction = 'diagonal-lru'
-                max_start_elem = [i, j]   
+                max_start_elem = [i, j]
 
     # diagonal direction - right to left going up
     for i in range(GRID_LEN-1, 3, -1):
@@ -117,7 +117,7 @@ def main():
                 max_tuple = [GRID[i][j], GRID[i-1][j-1], GRID[i-2][j-2], GRID[i-3][j-3]]
                 max_direction = 'diagonal-rlu'
                 max_start_elem = [i, j]
-                
+
     # diagonal direction - right to left going down
     for i in range(0, GRID_LEN-3):
         # walk through all the elements in the diagonal taking product of 4 at a time
@@ -128,7 +128,7 @@ def main():
                 max_tuple = [GRID[i][j], GRID[i-1][j-1], GRID[i-2][j-2], GRID[i-3][j-3]]
                 max_direction = 'diagonal-rld'
                 max_start_elem = [i, j]
-                
+
     print("max_product = {0}".format(max_product))
     print("max_tuple = {0}".format(max_tuple))
     print("max_direction = {0}".format(max_direction))

@@ -1,4 +1,4 @@
-# A Pythagorean triplet is a set of three natural numbers, a < b < c, for 
+# A Pythagorean triplet is a set of three natural numbers, a < b < c, for
 # which,
 # a^2 + b^2 = c^2
 # For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
@@ -12,6 +12,7 @@ import string, sys
 import commonutils
 
 def main():
+    prod = 0
     for i in range(1, 998):
         for j in range(i+1, 999):
             k = 1000 - i - j
@@ -19,7 +20,10 @@ def main():
                 continue
             if commonutils.isPythagoreanTriplet(i, j, k):
                 print (i, j, k)
-                print (i*j*k)
+                prod = i*j*k
+                break
+
+    print (f"product = {prod}")
 
 if __name__ == '__main__':
     main()
