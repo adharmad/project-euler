@@ -9,4 +9,4 @@ for (my $i=1 ; $i<1000 ; $i++) {
     }
 }
 
-print "Sum = $sum";
+print "Sum = $sum\n";
